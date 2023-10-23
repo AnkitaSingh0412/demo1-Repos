@@ -1,0 +1,106 @@
+<html>
+    <head></head>
+    <style>
+        #outer{
+            height:auto;
+            width:auto;
+            background-color: aqua;
+
+        }
+        #nav
+        {
+            height:100px;
+            width:1500px;
+            background-color: antiquewhite;
+        }
+       
+        .content
+        {
+            height: 500px;
+            width:1600px;
+            margin: auto;
+            border: 3px solid violet;
+            background-color: palegreen;
+            padding:20px;
+            border-radius: 5px;
+        }
+        #c1
+        {
+            width: 300px;
+            border: 5px solid black;
+            border-radius: 3px;
+            padding:20px;
+            margin: auto;
+            
+        }
+        input{
+            width:20px;
+            background-color: green;
+            color: white;
+            border: 3px solid brown;
+            border-radius: 5px;
+            padding: 26px;
+            margin: 5px;
+            font-size: 15px;
+        }
+
+    </style>
+    <script>
+        
+            setInterval(myTime,1000);
+            function myTime(){
+                let d = new Date();
+
+                document.getElementById("demo").innerHTML=d.toLocaleString();
+            }
+            function solve(val){
+                var v=document.getElementById('c1');
+                v.value +=val;
+            }
+            function result(val){
+                var num1=document.getElementById('c1').value;
+                var num2=eval(num1);
+                document.getElementById('c1').value=num2;
+            }
+
+        
+    </script>
+        <body>
+            
+            <div id="outer">
+            <div id="nav">
+                    <p id="demo"></p>  
+                </div>
+                <center>
+            <div class="content">
+                
+                <input  id="c1" type="text" name="answer"><br><br>
+                    
+                <input type="button" value="1" onclick="solve('1')">
+                <input type="button" value="2" onclick="solve('2')">
+                <input type="button" value="3" onclick="solve('3')">
+                <input type="button" value="+" onclick="solve('+')">
+                <br><br>
+                <input type="button" value="4" onclick="solve('4')">
+                <input type="button" value="5" onclick="solve('5')">
+                <input type="button" value="6" onclick="solve('6')">
+                <input type="button" value="-" onclick="solve('-')">
+                <br><br>
+                <input type="button" value="7" onclick="solve('7')">
+                <input type="button" value="8" onclick="solve('8')">
+                <input type="button" value="9" onclick="solve('9')">
+                <input type="button" value="*" onclick="solve('*')">
+                <br><br>
+                <input type="button" value="0" onclick="solve('0')">
+                <input type="button" value="/" onclick="solve('/')">
+                <input type="button" value="." onclick="solve('.')">
+                <input type="button" value="=" onclick="result('=')">
+                <br><br>
+                </div>
+                <center>
+            </div>
+            </div>
+            
+        </body>
+    
+</html>

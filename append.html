@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="localstorage.js"></script>
+</head>
+<body>
+    <p>this is first pera</p>
+    <p>this is second pera</p>
+    <ul>
+        <li>apple</li>
+        <li>banana</li>
+        <li>lichi</li>
+        <li>pear</li>
+    </ul>
+        <button id="b1">append pera</button>
+        <button id="b2">append list</button>
+        <script>
+            $("#b1").click(function(){
+            $("p").append("<b>Appended text</b>.");
+            });
+        </script>
+    
+</body>
+</html>

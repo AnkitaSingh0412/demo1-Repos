@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>Upload Multiple Images</title>
+</head>
+
+<body>
+    <input type="file" id="images" multiple accept="image/jpeg, image/png">
+    <div id="outputImg"></div>
+    <script>
+        function myFun() {
+            var files = images.files;
+            console.log(files);
+
+            let output = document.getElementById('outputImg');
+
+            for (let i = 0; i < files.length; i++) {
+                let img = document.createElement('img');
+                const reader = new FileReader();
+
+                reader.onloadend = (event) => {
+                    img.src = event.target.result;
+                };
+
+
+                reader.readAsDataURL(files[i]);
+                output.appendChild(img);
+            }
+
+        }
+        var images = document.getElementById("images")
+        images.addEventListener("change", myFun)
+    </script>
+</body>
+
+</html>

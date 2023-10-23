@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="file" id="files" name="files">
+    <div id="output"></div>
+    <br><br>
+    <textarea id="base64" rows="50" cols="50"></textarea>
+    <script>
+
+        if (window.File && window.FileReader && window.FileList && window.Blob) {
+            document.getElementById('files').addEventListener('change', myfun);
+        }
+        else {
+            alert("this file are not supported");
+        }
+        function myfun(evt) {
+            var fun = evt.target.files[0];
+            var reader = new FileReader();
+            reader.onload = (function (theFile) {
+                return function (e) {
+                    var binaryData = e.target.result;
+                    var base64String = window.btoa(binaryData);
+                    document.getElementById('base64').value = base64String;
+                    // alert("file converted is successfully");
+                   console.log(base64String);
+
+                    let blob = new Blob([base64String], { type: '' });
+                   console.log(blob);
+                    //let r2 = reader.readAsDataURL(blob);
+                    //console.log(r2);
+                    reader.onloadend = function(event) {
+                        let file = document.createElement('file')
+                        console.log(file);
+                        file.src = event.target.result; 
+                        let op = document.getElementById("output");
+                        let r1 = op.appendChild(file);
+                        //console.log(r1);
+                    }
+
+
+                };
+            })(fun);
+            reader.readAsBinaryString(fun);
+          console.log(fun);
+        }
+    </script>
+</body>
+
+</html>

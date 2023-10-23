@@ -1,0 +1,21 @@
+<html>
+    <script>
+        let arr1=[32,21,45,67];
+        let arr2=[21,45,29,30,31];
+        let mergearr= arr1.concat(arr2);
+        //document.write(mergearr);
+        console.log(mergearr);
+        function myfunctionarr(arr1,arr2){
+            let arr3=[]
+         mergearr.forEach((element,index)=>{
+         if(!arr3.includes(element)){
+            arr3.push(element);
+        
+         }
+        });   
+        console.log(arr3);
+        document.write(arr3);
+        }
+        myfunctionarr(arr1,arr2)
+    </script>
+    </html>

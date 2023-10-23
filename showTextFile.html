@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="file" id="filechoice" accept=".txt">
+    <div id="output"></div>
+    <script>
+       document.getElementById("filechoice").addEventListener('change',function(event){
+       // event.preventDefault();
+        var reader = new FileReader();
+        reader.onload = function() {
+            document.getElementById("output").textContent = this.result;
+        }
+        reader.readAsText(this.files[0]);
+       })
+    </script>
+    
+</body>
+</html>

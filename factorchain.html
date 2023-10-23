@@ -1,0 +1,18 @@
+<html>
+    <script>
+       let arr= [4,24,576,1728,15552];
+        //let arr =[4,16,32,104,268,646,1048];
+        //let arr=[2,4,16,32,90];
+        function isFactorChain(arr){
+        for(let i=0;i<arr.length-1;i++){
+            if(arr[i+1] % arr[i] !== 0){
+                return false;
+                
+            }
+        }
+        return true
+    }
+    document.write(isFactorChain(arr));
+    console.log(isFactorChain(arr));
+    </script>
+</html>

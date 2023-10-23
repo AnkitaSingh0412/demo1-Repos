@@ -1,0 +1,33 @@
+<html>
+
+<body>
+    <input type="file" id="images">
+    <div id="output">
+        <script>
+            function myFun(e) {
+                //var files=images.files
+                //console.log(e);
+                let reader = new FileReader();
+
+                let blobImg = new Blob([e.target.files[0]], {type: e.target.files[0].type});
+              console.log(blobImg);
+               // reader.onload = function(e){
+                 //   let img = document.createElement('img');
+                   // img.src = e.target.result;
+
+                    //output.appendChild(img);
+                   
+                }
+
+                //reader.readAsDataURL(blobImg); // conversion from any binary file to base64
+               //console.log(blobImg)
+            //}
+            var images = document.getElementById("images");
+            var output = document.getElementById("output");
+            images.addEventListener("change", myFun)
+
+
+        </script>
+</body>
+
+</html>

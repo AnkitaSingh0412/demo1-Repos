@@ -1,0 +1,20 @@
+<script>
+    function myFun(a,b,type){
+    if(type == 'sum'){
+    return a+b;
+    }
+    if(type == 'sub'){
+    return a-b;
+    }
+    if(type == 'mul'){
+    return a*b;
+    }
+    else{
+        return a/b;
+    }
+}
+document.write(myFun(10,5,'sum')+ '<br>');
+document.write(myFun(20,10,'sub') + '<br>')
+document.write(myFun(50,2,'mul') + '<br>')
+document.write(myFun(20,5,'div') + '<br>')
+</script>

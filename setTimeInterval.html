@@ -1,0 +1,10 @@
+<html>
+    <p id="demo"></p>
+    <script>
+        setInterval(myTime,1000);
+        function myTime(){
+            let d = new Date();
+            document.getElementById("demo").innerHTML=d.toLocaleString();
+        }
+    </script>
+</html>

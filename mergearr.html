@@ -1,0 +1,16 @@
+<html>
+    <head></head>
+    <script>
+        let arr1 = [32,55,54,23];
+        let arr2 = [23,12,54,27];
+       // let arr3 = arr1 + "," + arr2;
+        //let arr4= [];
+        function duplicatearr(arr1,arr2){
+            let mergedarr = [...arr1,...arr2];
+        //document.write(mergedarr);
+        let result = [...new Set(mergedarr)];
+        document.write(result);
+        }
+        duplicatearr(arr1,arr2);
+    </script>
+</html>
